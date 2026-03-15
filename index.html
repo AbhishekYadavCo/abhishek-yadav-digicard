@@ -349,7 +349,7 @@ body{
       <a href="https://wa.me/917460022677?text=Hello%20CS%20Abhishek%20Yadav%2C%20I%20would%20like%20to%20discuss%20your%20services." target="_blank" class="qa-btn q-wa">
         <span class="qa-icon">💬</span><span>WhatsApp</span>
       </a>
-      <a href="mailto:abhishekyadavco26@gmail.com" class="qa-btn q-mail">
+      <a href="/cdn-cgi/l/email-protection#68090a00011b000d0311090c091e0b075a5e280f05090104460b0705" class="qa-btn q-mail">
         <span class="qa-icon">📧</span><span>Email</span>
       </a>
       <a href="https://abhishekyadavco.github.io/abhishekyadavco.com/" target="_blank" class="qa-btn q-web">
@@ -387,9 +387,9 @@ body{
         <div class="crow-txt"><div class="crow-lbl">WhatsApp</div><div class="crow-val">+91 74600 22677</div></div>
         <div class="crow-arr">›</div>
       </a>
-      <a href="mailto:abhishekyadavco26@gmail.com" class="crow">
+      <a href="/cdn-cgi/l/email-protection#d3b2b1bbbaa0bbb6b8aab2b7b2a5b0bce1e593b4beb2babffdb0bcbe" class="crow">
         <div class="crow-ico ico-em">📧</div>
-        <div class="crow-txt"><div class="crow-lbl">Email</div><div class="crow-val">abhishekyadavco26@gmail.com</div></div>
+        <div class="crow-txt"><div class="crow-lbl">Email</div><div class="crow-val"><span class="__cf_email__" data-cfemail="0c6d6e64657f646967756d686d7a6f633e3a4c6b616d6560226f6361">[email&#160;protected]</span></div></div>
         <div class="crow-arr">›</div>
       </a>
       <a href="https://abhishekyadavco.github.io/abhishekyadavco.com/" target="_blank" class="crow">
@@ -589,7 +589,7 @@ body{
     </div>
     <div class="ftr-addr">
       285Kha/020A, Mill Road, Aishbagh, Lucknow — 226004, UP<br>
-      <a href="mailto:abhishekyadavco26@gmail.com">abhishekyadavco26@gmail.com</a> · +91 74600 22677
+      <a href="/cdn-cgi/l/email-protection#ef8e8d87869c878a84968e8b8e998c80ddd9af88828e8683c18c8082"><span class="__cf_email__" data-cfemail="61000309081209040a1800050017020e535721060c00080d4f020e0c">[email&#160;protected]</span></a> · +91 74600 22677
     </div>
     <div class="ftr-disclaimer">
       <span class="ftr-gold">Disclaimer:</span> This card is for informational purposes only and all services rendered in accordance with the guidelines of the<br>
@@ -618,41 +618,50 @@ URL:https://abhishekyadavco.github.io/abhishekyadavco.com/
 X-SOCIALPROFILE;type=linkedin:https://www.linkedin.com/in/cs-abhishek-yadav-988435182
 X-SOCIALPROFILE;type=instagram:https://www.instagram.com/abhishek_yadav_and_co
 END:VCARD`;
-  const blob = new Blob([vcf],{type:"text/vcard;charset=utf-8"});
+  const blob = new Blob([vcf], {type: "text/vcard;charset=utf-8"});
   const url  = URL.createObjectURL(blob);
   const a    = document.createElement("a");
-  a.href=url; a.download="CS_Abhishek_Yadav.vcf";
-  document.body.appendChild(a); a.click();
-  document.body.removeChild(a); URL.revokeObjectURL(url);
+  a.href = url;
+  a.download = "CS_Abhishek_Yadav.vcf";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
   showToast("📱 Contact saved to your device!");
 }
 
 async function shareCard() {
   const data = {
-    title:"CS Abhishek Yadav | Practicing Company Secretary",
-    text:"Corporate Law Advisory · COP No. 28523 | Abhishek Yadav & Co., Lucknow\n📞 +91 74600 22677",
-    url:"https://abhishekyadavco.github.io/abhishekyadavco.com/"
+    title: "CS Abhishek Yadav | Practicing Company Secretary",
+    text: "Corporate Law Advisory · COP No. 28523 | Abhishek Yadav & Co., Lucknow\n📞 +91 74600 22677",
+    url: "https://abhishekyadavco.github.io/abhishekyadavco.com/"
   };
   if (navigator.share) {
     try { await navigator.share(data); }
-    catch(e) { if(e.name!=="AbortError") fallbackShare(data.url); }
-  } else { fallbackShare(data.url); }
+    catch(e) { if (e.name !== "AbortError") fallbackShare(data.url); }
+  } else {
+    fallbackShare(data.url);
+  }
 }
 
 function fallbackShare(url) {
   navigator.clipboard.writeText(url)
-    .then(()=>showToast("🔗 Card link copied to clipboard!"))
-    .catch(()=>showToast("Copy: "+url));
+    .then(() => showToast("🔗 Card link copied to clipboard!"))
+    .catch(() => showToast("Copy: " + url));
 }
 
-function copyText(text) {
-  navigator.clipboard.writeText(text)
-    .then(()=>showToast("📋 Copied: "+text))
-    .catch(()=>{
-      const ta=document.createElement("textarea");
-      ta.value=text; ta.style.position="fixed"; ta.style.opacity="0";
-      document.body.appendChild(ta); ta.select();
-      document.execCommand("copy"); document.body.removeChild(ta);
+function copyText(txt) {
+  navigator.clipboard.writeText(txt)
+    .then(() => showToast("📋 Copied: " + txt))
+    .catch(() => {
+      const ta = document.createElement("textarea");
+      ta.value = txt;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand("copy");
+      document.body.removeChild(ta);
       showToast("📋 Copied!");
     });
 }
@@ -663,7 +672,35 @@ function submitForm() {
   const phone   = document.getElementById("f-phone").value.trim();
   const service = document.getElementById("f-service").value;
   const msg     = document.getElementById("f-msg").value.trim();
-  if (!name||!phone||!service) { showToast("⚠ Please fill Name, Phone & Service"); return; }
-  const text=[
+  if (!name || !phone || !service) {
+    showToast("⚠ Please fill Name, Phone & Service");
+    return;
+  }
+  const lines = [
     "📋 *New Consultation Request*",
-    "──────────────────�
+    "──────────────────────",
+    "👤 *Name:* " + name,
+    company ? "🏢 *Company:* " + company : null,
+    "📱 *Phone:* " + phone,
+    "⚖ *Service:* " + service,
+    msg ? "💬 *Message:* " + msg : null,
+    "──────────────────────",
+    "Sent via Digital Card"
+  ].filter(Boolean);
+  const whatsappText = encodeURIComponent(lines.join("\n"));
+  window.open("https://wa.me/917460022677?text=" + whatsappText, "_blank");
+  const successEl = document.getElementById("form-success");
+  if (successEl) { successEl.style.display = "block"; }
+  showToast("✅ Request sent via WhatsApp!");
+}
+
+function showToast(msg) {
+  const toast = document.getElementById("toast");
+  if (!toast) return;
+  toast.textContent = msg;
+  toast.classList.add("show");
+  setTimeout(() => toast.classList.remove("show"), 3000);
+}
+</script>
+</body>
+</html>
