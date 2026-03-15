@@ -666,14 +666,4 @@ function submitForm() {
   if (!name||!phone||!service) { showToast("⚠ Please fill Name, Phone & Service"); return; }
   const text=[
     "📋 *New Consultation Request*",
-    "─────────────────────",
-    `👤 *Name:* ${name}`,
-    company?`🏢 *Company:* ${company}`:null,
-    `📞 *Phone:* ${phone}`,
-    `⚖ *Service:* ${service}`,
-    msg?`💬 *Message:* ${msg}`:null,
-    "─────────────────────",
-    "_Sent via Digital Card — Abhishek Yadav & Co._"
-  ].filter(Boolean).join("\n");
-  window.open("https://wa.me/917460022677?text="+encodeURIComponent(text),"_blank");
-  document.getElementById("for
+    "──────────────────�
