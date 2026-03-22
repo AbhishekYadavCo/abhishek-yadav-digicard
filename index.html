@@ -5,15 +5,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <title>CS Abhishek Yadav · Digital Card</title>
-  <div style="font-family:Arial; font-size:16px; margin-top:10px;">
+  <div class="views-label">
     <i class="fas fa-eye"></i> Views: <b id="viewCount">Loading...</b>
 </div>
 
 <script>
-fetch('https://api.countapi.xyz/hit/abhishekyadavco.github.io/abhishek-yadav-digicard')
-.then(response => response.json())
-.then(data => {
-    document.getElementById('viewCount').innerText = data.value;
+fetch("https://api.countapi.xyz/hit/abhishek-digicard/views")
+.then((res) => res.json())
+.then((res) => {
+document.getElementById("viewCount").innerHTML = res.value;
 });
 </script>
 <meta name="description" content="CS Abhishek Yadav, Practicing Company Secretary – Corporate Law Advisory, Secretarial Compliance, Startup Governance. COP No. 28523.">
